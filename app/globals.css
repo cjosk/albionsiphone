@@ -6,6 +6,78 @@
   color-scheme: dark;
 }
 
+html {
+  @apply h-full;
+}
+
 body {
-  @apply bg-slate-950 text-slate-100 antialiased;
+  @apply min-h-full bg-slate-950 text-slate-100 antialiased;
+  background-image: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.2), transparent 60%),
+    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.15), transparent 55%),
+    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.12), transparent 60%);
+  background-attachment: fixed;
+}
+
+main {
+  @apply text-slate-100;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/15 bg-white/10 px-6 py-5 shadow-glass backdrop-blur-xl transition-all duration-150;
+}
+
+.glass-panel:hover {
+  @apply shadow-[0_30px_60px_rgba(15,23,42,0.35)];
+}
+
+.nav-link {
+  @apply inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-all duration-150 hover:border-white/30 hover:bg-white/10 hover:text-white;
+}
+
+.nav-link[data-active="true"] {
+  @apply border-white/30 bg-white/10 text-white shadow-inner;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-base text-white shadow-inner shadow-slate-900/40 outline-none transition focus:border-emerald-400/70 focus:bg-white/15;
+}
+
+.input-label {
+  @apply text-sm font-medium text-slate-200;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-500/40 transition hover:scale-[1.02] hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60;
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10;
+}
+
+.table-container {
+  @apply overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+.table-container table {
+  @apply min-w-full divide-y divide-white/10;
+}
+
+.table-container thead th {
+  @apply sticky top-0 bg-slate-900/80 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300 backdrop-blur;
+}
+
+.table-container tbody td {
+  @apply px-4 py-3 text-sm text-slate-100;
+}
+
+.status-positive {
+  @apply text-emerald-400;
+}
+
+.status-negative {
+  @apply text-rose-400;
+}
+
+.status-neutral {
+  @apply text-slate-300;
 }
