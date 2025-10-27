@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  @apply min-h-full bg-gradient-to-br from-[#0e0e0e] to-[#1c1c1c] text-slate-100 antialiased;
+  @apply min-h-full bg-supremacy-gradient text-slate-100 antialiased;
   background-attachment: fixed;
 }
 
@@ -20,11 +20,11 @@ main {
 }
 
 .glass-panel {
-  @apply rounded-2xl border border-supremacy-border bg-white/5 px-6 py-5 shadow-glass backdrop-blur-2xl transition-all duration-150;
+  @apply rounded-xl border border-[#2a2a2a] bg-[#161616] px-5 py-4 shadow-glass backdrop-blur-xl transition-all duration-150;
 }
 
 .glass-panel:hover {
-  @apply shadow-[0_32px_70px_rgba(0,0,0,0.55)];
+  @apply shadow-[0_28px_60px_rgba(0,0,0,0.5)];
 }
 
 .nav-link {
@@ -36,7 +36,7 @@ main {
 }
 
 .input-field {
-  @apply w-full rounded-xl border border-supremacy-border bg-white/10 px-4 py-2 text-base text-white shadow-inner shadow-black/40 outline-none transition focus:border-supremacy-primary/60 focus:bg-white/15;
+  @apply w-full rounded-xl border border-supremacy-border bg-white/5 px-4 py-2 text-base text-white shadow-inner shadow-black/40 outline-none transition focus:border-supremacy-primary/60 focus:bg-white/10;
 }
 
 .input-label {
@@ -53,7 +53,7 @@ main {
 }
 
 .table-container {
-  @apply overflow-hidden rounded-2xl border border-supremacy-border bg-white/[0.04] backdrop-blur-2xl;
+  @apply overflow-hidden rounded-xl border border-[#2a2a2a] bg-[#161616] backdrop-blur-xl;
 }
 
 .table-container table {

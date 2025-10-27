@@ -14,13 +14,14 @@ module.exports = {
       boxShadow: {
         glass: "0 28px 60px rgba(0, 0, 0, 0.45)",
       },
-        colors: {
-          "supremacy-primary": "#ffc107",
-          "supremacy-primary-hover": "#ffce32",
-          "supremacy-positive": "#21f4a2",
-          "supremacy-negative": "#ff4d57",
-          "supremacy-border": "rgba(255, 255, 255, 0.08)",
-        },
+      colors: {
+        "supremacy-primary": "#ffc107",
+        "supremacy-primary-hover": "#ffce32",
+        "supremacy-positive": "#00e676",
+        "supremacy-negative": "#ff5252",
+        "supremacy-border": "rgba(255, 255, 255, 0.08)",
+        "supremacy-card": "#161616",
+      },
     },
   },
   plugins: [],
