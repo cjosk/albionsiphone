@@ -18,7 +18,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="tr" className="dark">
       <head>
         <link rel="icon" href="https://i.hizliresim.com/mred25t.png" />
       </head>
@@ -30,7 +30,7 @@ export default function RootLayout({
                 <MainNav />
               </div>
               <div className="flex flex-1 justify-center">
-                <Link href="/" className="inline-flex items-center justify-center" aria-label="Supremacy home">
+                <Link href="/" className="inline-flex items-center justify-center" aria-label="Supremacy ana sayfa">
                   <img
                     src="https://i.hizliresim.com/mred25t.png"
                     alt="Team Supremacy logo"
@@ -38,14 +38,7 @@ export default function RootLayout({
                   />
                 </Link>
               </div>
-              <div className="hidden flex-1 justify-end md:flex">
-                <Link
-                  href="/"
-                  className="text-sm font-medium uppercase tracking-wide text-slate-400 transition hover:text-white"
-                >
-                  Supremacy Siphon Track
-                </Link>
-              </div>
+              <div className="flex flex-1 justify-end" />
             </div>
           </header>
           <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-8 px-6 py-10">{children}</main>

@@ -28,9 +28,9 @@ function StatRow({ label, value, tone }: { label: string; value: string; tone: "
         : "text-slate-300";
 
   return (
-    <div className="flex items-center justify-between text-sm font-medium">
+    <div className="flex items-center justify-between text-xs font-medium">
       <span className="flex items-center gap-2 text-slate-300">
-        <img src={SYPHON_ICON_URL} alt="Siphoned energy" className="h-4 w-4" />
+        <img src={SYPHON_ICON_URL} alt="Siphon enerjisi" className="h-4 w-4" />
         {label}
       </span>
       <span className={toneClass}>{value}</span>
@@ -43,26 +43,34 @@ export function PlayerCard({ summary, logs }: PlayerCardProps) {
   const topFiveLogs = logs.slice(0, 5);
 
   return (
-    <div className="flex h-full flex-col rounded-xl border border-supremacy-border bg-supremacy-surface/90 p-4 shadow-glass transition-transform duration-150 hover:-translate-y-0.5">
+    <div className="flex h-full flex-col rounded-xl border border-supremacy-border bg-supremacy-surface/90 p-3 shadow-glass transition-transform duration-150 hover:-translate-y-0.5">
       <div className="flex items-start justify-between gap-3">
         <div>
-          <h3 className="text-base font-semibold text-white">{summary.name}</h3>
-          <p className="text-xs text-slate-400">
-            Last activity: {summary.lastActivity ? formatDateTime(summary.lastActivity) : "No records"}
+          <h3 className="text-sm font-semibold text-white">{summary.name}</h3>
+          <p className="text-[11px] text-slate-400">
+            Son işlem: {summary.lastActivity ? formatDateTime(summary.lastActivity) : "Kayıt yok"}
           </p>
         </div>
         <button
           type="button"
           onClick={() => setExpanded((value) => !value)}
-          className="rounded-full border border-supremacy-border px-3 py-1 text-xs font-semibold text-slate-200 transition hover:border-supremacy-primary hover:text-white"
+          className="rounded-full border border-supremacy-border px-3 py-1 text-[11px] font-semibold text-slate-200 transition hover:border-supremacy-primary hover:text-white"
         >
-          {expanded ? "Collapse" : "View Full Profile"}
+          {expanded ? "Kapat" : "Profili Gör"}
         </button>
       </div>
 
       <div className="mt-3 space-y-2">
-        <StatRow label="Siphon Deposits" value={`${formatSiphon(summary.totalDeposits)}`} tone={summary.totalDeposits > 0 ? "positive" : "neutral"} />
-        <StatRow label="Siphon Withdrawals" value={`${formatSiphon(summary.totalWithdrawals)}`} tone={summary.totalWithdrawals > 0 ? "negative" : "neutral"} />
+        <StatRow
+          label="Siphon Depozitleri"
+          value={`${formatSiphon(summary.totalDeposits)}`}
+          tone={summary.totalDeposits > 0 ? "positive" : "neutral"}
+        />
+        <StatRow
+          label="Siphon Çekimleri"
+          value={`${formatSiphon(summary.totalWithdrawals)}`}
+          tone={summary.totalWithdrawals > 0 ? "negative" : "neutral"}
+        />
         <StatRow
           label="Siphon Net"
           value={`${formatSiphon(summary.net)}`}
@@ -71,18 +79,18 @@ export function PlayerCard({ summary, logs }: PlayerCardProps) {
       </div>
 
       <div className="mt-4 space-y-2">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Recent Activity</p>
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Son 5 İşlem</p>
         <ul className="space-y-1">
           {topFiveLogs.length === 0 ? (
-            <li className="text-xs text-slate-500">No logs yet.</li>
+            <li className="text-[11px] text-slate-500">Henüz kayıt yok.</li>
           ) : (
             topFiveLogs.map((log) => (
               <li
                 key={log.id}
-                className="flex items-center justify-between gap-3 rounded-lg border border-supremacy-border/40 bg-black/20 px-3 py-2 text-xs"
+                className="flex items-center justify-between gap-3 rounded-lg border border-supremacy-border/40 bg-black/20 px-3 py-2 text-[11px]"
               >
                 <span className="text-slate-300">{formatDateTime(log.date)}</span>
-                <span className="text-slate-400">{log.reason}</span>
+                <span className="text-slate-400">{log.reason === "Withdrawal" ? "Çekim" : "Depozit"}</span>
                 <span className={log.reason === "Withdrawal" ? "text-supremacy-negative" : "text-supremacy-positive"}>
                   {log.reason === "Withdrawal" ? "-" : "+"}
                   {formatSiphon(Math.abs(log.amount))}
@@ -106,13 +114,13 @@ export function PlayerCard({ summary, logs }: PlayerCardProps) {
           >
             <div className="space-y-4 p-4">
               <div className="space-y-1">
-                <h4 className="text-sm font-semibold text-white">Full Log History</h4>
-                <p className="text-xs text-slate-400">All entries for {summary.name} in chronological order.</p>
+                <h4 className="text-sm font-semibold text-white">Detaylı Kayıtlar</h4>
+                <p className="text-xs text-slate-400">{summary.name} için tüm işlemler kronolojik olarak listelenir.</p>
               </div>
               <ul className="space-y-2 text-xs">
                 {logs.length === 0 ? (
                   <li className="rounded-lg border border-dashed border-supremacy-border/60 bg-black/10 px-3 py-4 text-center text-slate-500">
-                    No logs recorded yet.
+                    Henüz kayıt yok.
                   </li>
                 ) : (
                   logs.map((log) => (
@@ -121,7 +129,7 @@ export function PlayerCard({ summary, logs }: PlayerCardProps) {
                       className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-supremacy-border/40 bg-black/20 px-3 py-2"
                     >
                       <span className="text-slate-200">{formatDateTime(log.date)}</span>
-                      <span className="text-slate-400">{log.reason}</span>
+                      <span className="text-slate-400">{log.reason === "Withdrawal" ? "Çekim" : "Depozit"}</span>
                       <span className={log.amount < 0 ? "text-supremacy-negative" : "text-supremacy-positive"}>
                         {log.amount < 0 ? "-" : "+"}
                         {formatSiphon(Math.abs(log.amount))}

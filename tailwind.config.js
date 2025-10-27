@@ -20,6 +20,7 @@ module.exports = {
         "supremacy-positive": "#00e676",
         "supremacy-negative": "#ff5252",
         "supremacy-surface": "#161616",
+        "supremacy-surface-strong": "#1f1f1f",
         "supremacy-border": "#2a2a2a",
         "supremacy-text": "#f5f5f5",
         "supremacy-muted": "#9ca3af",
