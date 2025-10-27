@@ -10,8 +10,8 @@ interface StatPillProps {
 }
 
 const toneMap: Record<StatTone, string> = {
-  positive: "bg-emerald-500/10 text-emerald-300 border-emerald-400/40",
-  negative: "bg-rose-500/10 text-rose-300 border-rose-400/40",
+  positive: "bg-supremacy-positive/15 text-supremacy-positive border-supremacy-positive/50",
+  negative: "bg-supremacy-negative/15 text-supremacy-negative border-supremacy-negative/50",
   neutral: "bg-white/10 text-slate-200 border-white/20",
 };
 

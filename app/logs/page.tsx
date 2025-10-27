@@ -92,8 +92,8 @@ export default function LogsPage() {
                     key={log.id}
                     className={
                       log.reason === "Withdrawal"
-                        ? "bg-rose-500/5"
-                        : "bg-emerald-500/5"
+                        ? "bg-supremacy-negative/10"
+                        : "bg-supremacy-positive/10"
                     }
                   >
                     <td>{formatDateTime(log.date)}</td>

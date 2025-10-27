@@ -11,10 +11,7 @@ html {
 }
 
 body {
-  @apply min-h-full bg-slate-950 text-slate-100 antialiased;
-  background-image: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.2), transparent 60%),
-    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.15), transparent 55%),
-    radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.12), transparent 60%);
+  @apply min-h-full bg-gradient-to-br from-[#0e0e0e] to-[#1c1c1c] text-slate-100 antialiased;
   background-attachment: fixed;
 }
 
@@ -23,23 +20,23 @@ main {
 }
 
 .glass-panel {
-  @apply rounded-2xl border border-white/15 bg-white/10 px-6 py-5 shadow-glass backdrop-blur-xl transition-all duration-150;
+  @apply rounded-2xl border border-supremacy-border bg-white/5 px-6 py-5 shadow-glass backdrop-blur-2xl transition-all duration-150;
 }
 
 .glass-panel:hover {
-  @apply shadow-[0_30px_60px_rgba(15,23,42,0.35)];
+  @apply shadow-[0_32px_70px_rgba(0,0,0,0.55)];
 }
 
 .nav-link {
-  @apply inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-200 transition-all duration-150 hover:border-white/30 hover:bg-white/10 hover:text-white;
+  @apply inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-150 hover:border-supremacy-primary/60 hover:bg-supremacy-primary/10 hover:text-white;
 }
 
 .nav-link[data-active="true"] {
-  @apply border-white/30 bg-white/10 text-white shadow-inner;
+  @apply border-supremacy-primary/80 bg-supremacy-primary/20 text-white shadow-inner;
 }
 
 .input-field {
-  @apply w-full rounded-xl border border-white/20 bg-white/10 px-4 py-2 text-base text-white shadow-inner shadow-slate-900/40 outline-none transition focus:border-emerald-400/70 focus:bg-white/15;
+  @apply w-full rounded-xl border border-supremacy-border bg-white/10 px-4 py-2 text-base text-white shadow-inner shadow-black/40 outline-none transition focus:border-supremacy-primary/60 focus:bg-white/15;
 }
 
 .input-label {
@@ -47,15 +44,16 @@ main {
 }
 
 .primary-button {
-  @apply inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2 text-sm font-semibold text-emerald-950 shadow-lg shadow-emerald-500/40 transition hover:scale-[1.02] hover:bg-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/60;
+  @apply inline-flex items-center justify-center rounded-full bg-supremacy-primary px-5 py-2 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-supremacy-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-supremacy-primary/40;
+  box-shadow: 0 18px 38px rgba(255, 193, 7, 0.28);
 }
 
 .secondary-button {
-  @apply inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-2 text-sm font-semibold text-white transition hover:border-white/40 hover:bg-white/10;
+  @apply inline-flex items-center justify-center rounded-full border border-supremacy-border px-5 py-2 text-sm font-semibold text-slate-200 transition hover:border-supremacy-primary/50 hover:bg-white/10;
 }
 
 .table-container {
-  @apply overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  @apply overflow-hidden rounded-2xl border border-supremacy-border bg-white/[0.04] backdrop-blur-2xl;
 }
 
 .table-container table {
@@ -63,7 +61,7 @@ main {
 }
 
 .table-container thead th {
-  @apply sticky top-0 bg-slate-900/80 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300 backdrop-blur;
+  @apply sticky top-0 bg-black/70 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300 backdrop-blur;
 }
 
 .table-container tbody td {
@@ -71,11 +69,11 @@ main {
 }
 
 .status-positive {
-  @apply text-emerald-400;
+  @apply text-supremacy-positive;
 }
 
 .status-negative {
-  @apply text-rose-400;
+  @apply text-supremacy-negative;
 }
 
 .status-neutral {
