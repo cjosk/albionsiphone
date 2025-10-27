@@ -7,6 +7,7 @@ const routes = [
   { href: "/", label: "Dashboard" },
   { href: "/logs", label: "Logs" },
   { href: "/new", label: "New Entry" },
+  { href: "/admin", label: "Admin" },
 ];
 
 export function MainNav() {
