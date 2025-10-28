@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply min-h-full bg-supremacy-gradient text-slate-100 antialiased;
+  background-attachment: fixed;
+}
+
+main {
+  @apply text-slate-100;
+}
+
+.glass-panel {
+  @apply rounded-xl border border-[#2a2a2a] bg-[#161616] px-5 py-4 shadow-glass backdrop-blur-xl transition-all duration-150;
+}
+
+.glass-panel:hover {
+  @apply shadow-[0_28px_60px_rgba(0,0,0,0.5)];
+}
+
+.nav-link {
+  @apply inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-150 hover:border-supremacy-primary/60 hover:bg-supremacy-primary/10 hover:text-white;
+}
+
+.nav-link[data-active="true"] {
+  @apply border-supremacy-primary/80 bg-supremacy-primary/20 text-white shadow-inner;
+}
+
+.input-field {
+  @apply w-full rounded-xl border border-supremacy-border bg-white/5 px-4 py-2 text-base text-white shadow-inner shadow-black/40 outline-none transition focus:border-supremacy-primary/60 focus:bg-white/10;
+}
+
+.input-label {
+  @apply text-sm font-medium text-slate-200;
+}
+
+.primary-button {
+  @apply inline-flex items-center justify-center rounded-full bg-supremacy-primary px-5 py-2 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-supremacy-primary-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-supremacy-primary/40;
+  box-shadow: 0 18px 38px rgba(255, 193, 7, 0.28);
+}
+
+.secondary-button {
+  @apply inline-flex items-center justify-center rounded-full border border-supremacy-border px-5 py-2 text-sm font-semibold text-slate-200 transition hover:border-supremacy-primary/50 hover:bg-white/10;
+}
+
+.table-container {
+  @apply overflow-hidden rounded-xl border border-[#2a2a2a] bg-[#161616] backdrop-blur-xl;
+}
+
+.table-container table {
+  @apply min-w-full divide-y divide-white/10;
+}
+
+.table-container thead th {
+  @apply sticky top-0 bg-black/70 px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-slate-300 backdrop-blur;
+}
+
+.table-container tbody td {
+  @apply px-4 py-3 text-sm text-slate-100;
+}
+
+.status-positive {
+  @apply text-supremacy-positive;
+}
+
+.status-negative {
+  @apply text-supremacy-negative;
+}
+
+.status-neutral {
+  @apply text-slate-300;
+}
