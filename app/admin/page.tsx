@@ -147,7 +147,7 @@ export default function AdminPage() {
           </div>
           <button
             type="submit"
-            className="primary-button bg-supremacy-primary text-black hover:bg-supremacy-primary-hover disabled:cursor-not-allowed disabled:opacity-60"
+            className="primary-button bg-supremacy-primary text-black hover:bg-supremacy-primary-hover disabled:cursor-not-allowed disabled:opacity-60 w-full sm:w-auto"
             disabled={busyAction === "update"}
           >
             {busyAction === "update" ? "Kaydediliyor…" : "Bakiyeyi Kaydet"}
@@ -160,11 +160,11 @@ export default function AdminPage() {
         description="Kayıtları yedekleyin veya sıfırlayın."
         className="rounded-xl border border-supremacy-border bg-supremacy-surface/95"
       >
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <button
             type="button"
             onClick={handleBackupLogs}
-            className="secondary-button border-supremacy-border text-slate-100 hover:border-supremacy-primary"
+            className="secondary-button w-full border-supremacy-border text-slate-100 hover:border-supremacy-primary sm:w-auto"
             disabled={busyAction === "backup"}
           >
             {busyAction === "backup" ? "Dışa aktarılıyor…" : "Kayıtları Yedekle"}
@@ -172,7 +172,7 @@ export default function AdminPage() {
           <button
             type="button"
             onClick={handleResetLogs}
-            className="secondary-button border-supremacy-negative/60 text-supremacy-negative hover:border-supremacy-negative hover:text-white"
+            className="secondary-button w-full border-supremacy-negative/60 text-supremacy-negative hover:border-supremacy-negative hover:text-white sm:w-auto"
             disabled={busyAction === "reset"}
           >
             {busyAction === "reset" ? "Temizleniyor…" : "Kayıtları Sıfırla"}

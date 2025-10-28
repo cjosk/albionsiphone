@@ -28,7 +28,7 @@ main {
 }
 
 .nav-link {
-  @apply inline-flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-150 hover:border-supremacy-primary/60 hover:bg-supremacy-primary/10 hover:text-white;
+  @apply flex items-center gap-2 rounded-full border border-transparent px-4 py-2 text-sm font-medium text-slate-300 transition-all duration-150 hover:border-supremacy-primary/60 hover:bg-supremacy-primary/10 hover:text-white;
 }
 
 .nav-link[data-active="true"] {
@@ -54,6 +54,10 @@ main {
 
 .table-container {
   @apply overflow-hidden rounded-xl border border-[#2a2a2a] bg-[#161616] backdrop-blur-xl;
+}
+
+.table-container-wrapper {
+  @apply w-full overflow-x-auto;
 }
 
 .table-container table {

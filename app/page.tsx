@@ -172,18 +172,18 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col gap-4 rounded-xl border border-supremacy-border bg-supremacy-surface/90 p-4 shadow-glass sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-3 rounded-xl border border-supremacy-border bg-supremacy-surface/90 p-3 shadow-glass sm:flex-row sm:items-center sm:justify-between sm:p-4 md:gap-4 md:p-5">
         <input
           type="search"
           placeholder="Oyuncu ara"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
-          className="input-field max-w-lg border-supremacy-border bg-[#1f1f1f] text-sm text-slate-100 placeholder:text-slate-400"
+          className="input-field w-full max-w-lg border-supremacy-border bg-[#1f1f1f] text-sm text-slate-100 placeholder:text-slate-400"
         />
         <select
           value={netFilter}
           onChange={(event) => setNetFilter(event.target.value as NetFilter)}
-          className="input-field max-w-xs border-supremacy-border bg-[#1f1f1f] text-sm text-slate-100"
+          className="input-field w-full max-w-xs border-supremacy-border bg-[#1f1f1f] text-sm text-slate-100 sm:w-auto"
         >
           {NET_FILTERS.map((option) => (
             <option key={option.value} value={option.value}>
@@ -193,10 +193,14 @@ export default function DashboardPage() {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <div className="relative mx-auto flex w-full max-w-[520px] items-center overflow-hidden rounded-xl border border-supremacy-border bg-gradient-to-br from-[#ffce32] via-[#ffc107] to-[#8c5b00] p-4 shadow-lg">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+        <div className="relative mx-auto flex w-full max-w-[520px] items-center overflow-hidden rounded-xl border border-supremacy-border bg-gradient-to-br from-[#ffce32] via-[#ffc107] to-[#8c5b00] p-3 shadow-lg sm:p-4 md:p-5">
           <div className="flex items-center gap-4">
-            <img src={SYPHON_ICON_URL} alt="SIPHONE enerjisi simgesi" className="h-12 w-12 min-w-[3rem] drop-shadow-lg" />
+            <img
+              src={SYPHON_ICON_URL}
+              alt="SIPHONE enerjisi simgesi"
+              className="h-12 w-12 min-w-[3rem] drop-shadow-lg sm:h-14 sm:w-14 md:h-16 md:w-16"
+            />
             <div className="flex flex-col">
               <span className="text-[0.7rem] font-extrabold uppercase tracking-[0.45em] text-black/70">SIPHONE</span>
               <span className="text-4xl font-black text-black md:text-5xl">{formatSiphon(guildSettings.siphonTotal)}</span>
@@ -211,7 +215,7 @@ export default function DashboardPage() {
               Toplam Yatırım
             </span>
           }
-          className="rounded-xl border border-supremacy-border bg-supremacy-surface/90 px-4 py-4"
+          className="rounded-xl border border-supremacy-border bg-supremacy-surface/90 px-3 py-3 sm:px-4 sm:py-4"
         >
           <StatPill
             label="Enerji"
@@ -227,7 +231,7 @@ export default function DashboardPage() {
               Toplam Çekim
             </span>
           }
-          className="rounded-xl border border-supremacy-border bg-supremacy-surface/90 px-4 py-4"
+          className="rounded-xl border border-supremacy-border bg-supremacy-surface/90 px-3 py-3 sm:px-4 sm:py-4"
         >
           <StatPill
             label="Enerji"
@@ -237,12 +241,12 @@ export default function DashboardPage() {
         </GlassCard>
       </div>
 
-      <div className="grid gap-2 sm:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {shouldShowSkeleton ? (
           Array.from({ length: 6 }).map((_, index) => (
             <div
               key={`skeleton-${index}`}
-              className="h-[170px] rounded-xl border border-supremacy-border bg-supremacy-surface/80 p-3 shadow-glass"
+              className="h-[170px] rounded-xl border border-supremacy-border bg-supremacy-surface/80 p-3 shadow-glass sm:p-4"
             >
               <div className="h-5 w-32 animate-pulse rounded-full bg-white/10" />
               <div className="mt-3 flex flex-col gap-2">

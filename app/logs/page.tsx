@@ -58,9 +58,10 @@ export default function LogsPage() {
       </div>
 
       <GlassCard title={`Toplam Kayıt (${totalEntries})`}>
-        <div className="table-container">
-          <table>
-            <thead>
+        <div className="table-container-wrapper">
+          <div className="table-container">
+            <table>
+              <thead>
               <tr>
                 <th scope="col">Tarih</th>
                 <th scope="col">Oyuncu</th>
@@ -107,7 +108,8 @@ export default function LogsPage() {
                 ))
               )}
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
       </GlassCard>
     </div>
