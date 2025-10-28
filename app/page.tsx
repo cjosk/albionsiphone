@@ -193,13 +193,13 @@ export default function DashboardPage() {
         </select>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-3">
-        <div className="relative overflow-hidden rounded-xl border border-supremacy-border bg-gradient-to-br from-[#ffce32] via-[#ffc107] to-[#8c5b00] p-5 shadow-lg md:col-span-2">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="relative mx-auto flex w-full max-w-[520px] items-center overflow-hidden rounded-xl border border-supremacy-border bg-gradient-to-br from-[#ffce32] via-[#ffc107] to-[#8c5b00] p-4 shadow-lg">
           <div className="flex items-center gap-4">
-            <img src={SYPHON_ICON_URL} alt="Siphon enerjisi" className="h-16 w-16 drop-shadow-lg" />
+            <img src={SYPHON_ICON_URL} alt="Siphon enerjisi" className="h-12 w-12 min-w-[3rem] drop-shadow-lg" />
             <div className="flex flex-col">
-              <span className="text-xs font-extrabold uppercase tracking-[0.4em] text-black/70">SIPHONE</span>
-              <span className="text-5xl font-black text-black">{formatSiphon(guildSettings.siphonTotal)}</span>
+              <span className="text-[0.7rem] font-extrabold uppercase tracking-[0.45em] text-black/70">SIPHONE</span>
+              <span className="text-4xl font-black text-black md:text-5xl">{formatSiphon(guildSettings.siphonTotal)}</span>
             </div>
           </div>
         </div>

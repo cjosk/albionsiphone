@@ -2,19 +2,29 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
-const routes = [
+export interface NavRoute {
+  href: string;
+  label: string;
+}
+
+interface MainNavProps {
+  routes?: NavRoute[];
+  className?: string;
+}
+
+const DEFAULT_ROUTES: NavRoute[] = [
   { href: "/", label: "🏠 Gösterge Paneli" },
   { href: "/logs", label: "📜 Kayıtlar" },
   { href: "/new", label: "➕ Yeni Kayıt" },
-  { href: "/admin", label: "⚙️ Yönetim" },
 ];
 
-export function MainNav() {
+export function MainNav({ routes = DEFAULT_ROUTES, className }: MainNavProps) {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-3 text-sm">
+    <nav className={cn("flex flex-nowrap items-center gap-6 whitespace-nowrap text-sm", className)}>
       {routes.map((route) => {
         const isActive = route.href === "/" ? pathname === "/" : pathname?.startsWith(route.href);
         return (
